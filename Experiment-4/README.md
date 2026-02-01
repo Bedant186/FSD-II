@@ -47,6 +47,7 @@ This experiment helps in understanding how state behaves at different levels of 
 - Clean component-based architecture
 
 ---
+## 📁 Project Structure
 
 <pre>
 src/
