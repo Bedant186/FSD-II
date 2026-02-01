@@ -55,10 +55,10 @@ src/
 │
 │── components/
 │   └── context/
-│       ├── CounterGlobalContextAPI.jsx
-│       ├── CounterGlobalContextParent.jsx
-│       ├── CounterLocalState.jsx
-│       └── CounterReduxParent.jsx
+│     ├── CounterGlobalContextAPI.jsx
+│   ├── CounterGlobalContextParent.jsx
+│   ├── CounterLocalState.jsx
+│   └── CounterReduxParent.jsx
 │
 │── store/
 │   ├── CounterReducer.jsx
