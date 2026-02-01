@@ -1,51 +1,99 @@
-# SPA Experiment – React + Vite
+# Experiment 4 – State Management in React
 
-## Objective
-To design and develop a basic Single Page Application (SPA) using a modern frontend framework and understand client-side rendering.
+##  Experiment Title
+**Implementation of Local State and Global State Management in React**
 
-## Description
-This project is a basic Single Page Application developed using **React** and **Vite**.
-The application consists of multiple pages such as Home, About, Contact, and SPA, which are rendered dynamically without reloading the browser.
+---
 
-The project demonstrates component-based architecture and smooth navigation in SPAs.
-It is successfully deployed on **Netlify**.
+## Aim
+To understand and implement **state management in React** by creating:
+1. A **Local State Counter** using React Hooks
+2. A **Global State Counter** using Redux
+
+---
+
+##  Experiment Number
+**Experiment – 4**
+
+---
+
+##  Description of the Experiment
+
+In this experiment, a React application is developed to demonstrate the difference between **local state** and **global state** management.
+
+- **Local State Counter** is implemented using the `useState` hook, where the state is confined to a single component.
+- **Global State Counter** is implemented using **Redux**, where the state is stored centrally and shared across components using the Redux store and Provider.
+
+This experiment helps in understanding how state behaves at different levels of a React application and when to choose local or global state.
+
+---
 
 ## Technologies Used
-- React.js
+
+- React JS
+- Redux
+- React-Redux
 - Vite
 - JavaScript (ES6)
-- HTML5
-- CSS3
-- Netlify (Deployment)
-- GitHub (Version Control)
+- HTML & CSS
 
-## Project Structure
-- `Home.jsx` – Home page component
-- `About.jsx` – About page component
-- `Contact.jsx` – Contact page component
-- `Spa.jsx` – SPA content component
-- `main.jsx` – Application entry point
+---
 
-## Features
-- Single Page Application architecture
-- Component-based UI
-- Fast rendering using Vite
-- Navigation without page reload
-- Responsive design
+## Features Implemented
 
-## Deployment
-The project is deployed on Netlify.  
-🔗 **Live URL:** *(paste your Netlify link here)*
+- Increment, decrement, and reset functionality
+- Local state management using `useState`
+- Global state management using Redux Store
+- Clean component-based architecture
 
-## Learning Outcomes of Experiment
-After completing this experiment, I learned:
-- The concept and working of Single Page Applications (SPA)
-- How React components are created and reused
-- Client-side rendering and navigation
-- Project setup using Vite
-- Folder structure of a React SPA
-- Deployment of frontend applications using Netlify
-- Using GitHub for version control and documentation
+---
+
+src/
+│── assets/
+│
+│── components/
+│ └── context/
+│   |── CounterGlobalContextAPI.jsx
+│ ├── CounterGlobalContextParent.jsx
+│ ├── CounterLocalState.jsx
+│ └── CounterReduxParent.jsx
+│
+│── store/
+│ ├── CounterReducer.jsx
+│ └── Store.jsx
+│
+│── App.css
+│── App.jsx
+│── index.css
+│── main.jsx
+
+## Learning Outcomes
+
+After completing this experiment, the learner is able to:
+
+1. Understand the concept of **state in React**
+2. Differentiate between **local state and global state**
+3. Implement `useState` hook for component-level state
+4. Create and configure a **Redux store**
+5. Use `Provider` to make global state accessible
+6. Apply Redux in real-world React applications
+7. Improve modularity and scalability of React projects
+
+---
+
+##  Deployment Details
+
+- The complete project has been **uploaded to GitHub** for code management.
+- The application has been **successfully deployed on Netlify**, making it accessible online.
+
+---
 
 ## Conclusion
-This experiment helped in understanding modern frontend development using React and the advantages of Single Page Applications over traditional multi-page websites.
+
+This experiment successfully demonstrates how state management works in React using both local and global approaches. It provides practical understanding of Redux and prepares the learner to manage complex application states efficiently.
+
+---
+
+**Submitted as part of React JS Laboratory – Experiment 4**
+
+
