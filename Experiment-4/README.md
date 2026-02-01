@@ -48,6 +48,7 @@ This experiment helps in understanding how state behaves at different levels of 
 
 ---
 
+<pre>
 src/
 │── assets/
 │
@@ -66,6 +67,8 @@ src/
 │── App.jsx
 │── index.css
 │── main.jsx
+</pre>
+
 
 
 ## Learning Outcomes
