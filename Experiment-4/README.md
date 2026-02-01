@@ -52,20 +52,21 @@ src/
 │── assets/
 │
 │── components/
-│ └── context/
-│   |── CounterGlobalContextAPI.jsx
-│ ├── CounterGlobalContextParent.jsx
-│ ├── CounterLocalState.jsx
-│ └── CounterReduxParent.jsx
+│   └── context/
+│       ├── CounterGlobalContextAPI.jsx
+│       ├── CounterGlobalContextParent.jsx
+│       ├── CounterLocalState.jsx
+│       └── CounterReduxParent.jsx
 │
 │── store/
-│ ├── CounterReducer.jsx
-│ └── Store.jsx
+│   ├── CounterReducer.jsx
+│   └── Store.jsx
 │
 │── App.css
 │── App.jsx
 │── index.css
 │── main.jsx
+
 
 ## Learning Outcomes
 
