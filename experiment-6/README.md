@@ -59,7 +59,7 @@ The form includes the following components:
 ---
 
 ## 📂 Project Structure
-
+```
 project-root/
 │── index.html      
 │
@@ -76,8 +76,7 @@ project-root/
 │
 │── package.json
 │── vite.config.js
-
-
+```
 ---
 
 ## Validation Logic
