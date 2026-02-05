@@ -6,11 +6,18 @@ import Contact from "./pages/Contact";
 function App() {
   return (
     <div>
-      <nav>
-        <Link to="/">Home</Link> | 
-        <Link to="/about">About</Link> | 
-        <Link to="/contact">Contact</Link>
-      </nav>
+     <nav
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100vh",
+  }}
+>
+  <Link to="/">Home</Link> |{" "}
+  <Link to="/about">About</Link> |{" "}
+  <Link to="/contact">Contact</Link>
+</nav>
 
       <Routes>
         <Route path="/" element={<Home />} />
