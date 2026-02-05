@@ -62,21 +62,22 @@ Lazy loading ensures that:
 ## 📂 Project Structure  
 
 project-root/
-│── index.html       
+│── index.html
 │
 │── src/
 │   ├── components/
 │   │   ├── Home.jsx
 │   │   ├── About.jsx
-│   │   ├── Contact.jsx
+│   │   └── Contact.jsx
 │   │
 │   ├── App.jsx
 │   ├── App.css
 │   ├── main.jsx
-│   ├── index.css
+│   └── index.css
 │
 │── package.json
-│── vite.config.js
+└── vite.config.js
+
 
 
 ---
