@@ -3,6 +3,9 @@
 ##  Experiment No.
 **5**
 
+## UID
+**23BDA70122**
+
 ##  Experiment Title  
 **Optimizing Frontend Performance by Implementing Lazy Loading in a Single Page Application**
 
