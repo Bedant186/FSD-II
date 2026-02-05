@@ -49,6 +49,8 @@ This experiment helps in understanding how state behaves at different levels of 
 ---
 ## 📁 Project Structure
 
+=======
+<pre>
 src/
 │── assets/
 │
@@ -62,11 +64,25 @@ src/
 │── store/
 │ ├── CounterReducer.jsx
 │ └── Store.jsx
+=======
+│   └── context/
+│     ├── CounterGlobalContextAPI.jsx
+│   ├── CounterGlobalContextParent.jsx
+│   ├── CounterLocalState.jsx
+│   └── CounterReduxParent.jsx
+│
+│── store/
+│   ├── CounterReducer.jsx
+│   └── Store.jsx
 │
 │── App.css
 │── App.jsx
 │── index.css
 │── main.jsx
+=======
+</pre>
+
+
 
 ## Learning Outcomes
 
