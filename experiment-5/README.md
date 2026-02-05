@@ -59,8 +59,9 @@ Lazy loading ensures that:
 
 ---
 
-## 📂 Project Structure  
+## 📂 Project Structure
 
+```
 project-root/
 │── index.html
 │
@@ -77,6 +78,7 @@ project-root/
 │
 │── package.json
 └── vite.config.js
+```
 
 
 
