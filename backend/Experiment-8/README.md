@@ -124,12 +124,12 @@ https://23bda70122-expepriment-8.netlify.app/
 
 
 ## Testing Instructions:
-Open Postman.
-Enter API URL.
-Select request method.
-Add JSON body if required.
-Click Send.
-Verify response and status code.
+-Open Postman.
+-Enter API URL.
+-Select request method.
+-Add JSON body if required.
+-Click Send.
+-Verify response and status code.
 
 ## Learning Outcomes:
 
