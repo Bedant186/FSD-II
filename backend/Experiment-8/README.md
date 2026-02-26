@@ -102,7 +102,7 @@ DELETE | `/students/<id>` | Delete student |
   "name": "Bedant",
   "age": 23
 }
-
+```
 ## Sample JSON Response
 ```json
 {
@@ -115,16 +115,15 @@ DELETE | `/students/<id>` | Delete student |
 
 Deployment Details
 
-GitHub Repository:
+## GitHub Repository:
 Repository Name: FSD-II
 Username: Bedant186
 
-Live Deployment (Frontend Preview):
+## Live Deployment :
 https://23bda70122-expepriment-8.netlify.app/
 
 
-Testing Instructions:
-
+## Testing Instructions:
 Open Postman.
 Enter API URL.
 Select request method.
@@ -132,7 +131,7 @@ Add JSON body if required.
 Click Send.
 Verify response and status code.
 
-Learning Outcomes:
+## Learning Outcomes:
 
 After completing this experiment, the following concepts were learned:
 
@@ -152,11 +151,11 @@ Backend deployment process
 
 Structuring scalable backend projects
 
-Conclusion
+## Conclusion
 
 This experiment successfully demonstrated how to design and implement RESTful APIs using Flask. The CRUD operations were implemented and tested successfully. The project helped in understanding backend development concepts, API architecture, request handling, and deployment strategies. It provided practical exposure to real-world backend application development.
 
-Author
+## Author
 
 Bedant Singhania
 Experiment 8 – RESTful API Development using Flask
