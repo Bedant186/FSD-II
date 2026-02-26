@@ -111,6 +111,8 @@ DELETE | `/students/<id>` | Delete student |
   "age": 22
 }
 
+```
+
 Deployment Details
 
 GitHub Repository:
