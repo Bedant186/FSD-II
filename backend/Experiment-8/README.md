@@ -58,6 +58,7 @@ The API endpoints were tested using Postman to verify correctness and ensure pro
 - Deployment-ready backend
 
 ---
+```
 
 ## 📂 Project Structure
 EXPERIMENT-8/
@@ -75,7 +76,7 @@ EXPERIMENT-8/
 ├── run.py
 ├── README.md
 └── requirements.txt
-
+```
 ---
 
 ## API Endpoints
