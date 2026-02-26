@@ -61,20 +61,16 @@ The API endpoints were tested using Postman to verify correctness and ensure pro
 
 ## 📂 Project Structure
 EXPERIMENT-8/
-│
-├── __pycache__/
-│
-├── routes/
-│   ├── __pycache__/
+├── **__pycache__/**
+├── **routes/**
+│   ├── **__pycache__/**
 │   └── student_routes.py
-│
-├── vir-env/
+├── **vir-env/**
 │   ├── Include/
 │   ├── Lib/
 │   ├── Scripts/
 │   ├── .gitignore
 │   └── pyvenv.cfg
-│
 ├── app.py
 ├── run.py
 ├── README.md
@@ -124,12 +120,12 @@ https://23bda70122-expepriment-8.netlify.app/
 
 
 ## Testing Instructions:
--Open Postman.
--Enter API URL.
--Select request method.
--Add JSON body if required.
--Click Send.
--Verify response and status code.
+-Open Postman
+-Enter API URL
+-Select request method
+-Add JSON body if required
+-Click Send
+-Verify response and status code
 
 ## Learning Outcomes:
 
