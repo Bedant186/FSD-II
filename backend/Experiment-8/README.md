@@ -62,9 +62,9 @@ The API endpoints were tested using Postman to verify correctness and ensure pro
 
 ## 📂 Project Structure
 EXPERIMENT-8/
-├── **__pycache__/**
-├── **routes/**
-│   ├── **__pycache__/**
+├── __pycache__/
+├── routes/
+│   ├── __pycache__/
 │   └── student_routes.py
 ├── **vir-env/**
 │   ├── Include/
