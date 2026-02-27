@@ -117,8 +117,7 @@ Repository Name: FSD-II
 Username: Bedant186
 
 ## Live Deployment :
-https://23bda70122-expepriment-8.netlify.app/
-
+https://two3bda70122-experiment-8.onrender.com
 
 ## Testing Instructions:
 -Open Postman
