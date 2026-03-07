@@ -69,14 +69,19 @@ All APIs are tested using **Postman**, and the backend application is deployed u
 ## 📂 Project Structure
 
 ```
-Experiment-9/
+
+EXPERIMENT-9/
 │
 ├── app.py
-├── requirements.txt
 ├── README.md
+├── requirements.txt
 │
-└── routes/
-    └── auth_routes.py
+└── venv1/
+    ├── Include/
+    ├── Lib/
+    ├── Scripts/
+    └── pyvenv.cfg
+
 ```
 
 ### File Explanation
@@ -172,8 +177,7 @@ The backend API was deployed using **Render Cloud Platform**.
 ---
 
 ## Live Deployment (Frontend Preview)
-
-https://23bda70122-expepriment-8.netlify.app/
+https://two3bda70122-expepriment-9.onrender.com
 
 ---
 
