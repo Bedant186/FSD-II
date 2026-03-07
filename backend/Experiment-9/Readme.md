@@ -65,30 +65,19 @@ All APIs are tested using **Postman**, and the backend application is deployed u
 - Backend deployment on **Render**
 
 ---
-```
 
 ## 📂 Project Structure
-<<<<<<< HEAD
-EXPERIMENT-8/
-├── __pycache__/
-├── routes/
-│   ├── __pycache__/
-│   └── student_routes.py
-├── vir-env/
-│   ├── Include/
-│   ├── Lib/
-│   ├── Scripts/
-│   ├── .gitignore
-│   └── pyvenv.cfg
-├── app.py
-├── run.py
-├── README.md
-└── requirements.txt
+
 ```
-=======
-
-
-
+Experiment-9/
+│
+├── app.py
+├── requirements.txt
+├── README.md
+│
+└── routes/
+    └── auth_routes.py
+```
 
 ### File Explanation
 
@@ -97,7 +86,6 @@ EXPERIMENT-8/
 - **routes/** → Folder containing authentication routes.
 - **README.md** → Documentation of the project.
 
->>>>>>> a74ec2e (Added README for Experiment 9)
 ---
 
 ## API Endpoints
@@ -115,108 +103,180 @@ EXPERIMENT-8/
 
 ## Sample JSON Request
 
-<<<<<<< HEAD
-### Create Student
-```json
-{
-  "name": "Bedant",
-  "age": 23
-}
-```
-## Sample JSON Response
-=======
 ### Token Login
 
 **POST** `/token-login`
 
->>>>>>> a74ec2e (Added README for Experiment 9)
+Request:
+
 ```json
 {
   "username": "admin",
   "password": "admin123"
 }
+```
+
+Response:
+
+```json
 {
   "token": "YWRtaW4="
 }
-
 ```
 
-Deployment Details
+---
 
-<<<<<<< HEAD
-## GitHub Repository:
-Repository Name: FSD-II
-Username: Bedant186
+### JWT Login
 
-## Live Deployment :
-https://two3bda70122-experiment-8.onrender.com
+**POST** `/jwt-login`
 
-## Testing Instructions:
--Open Postman
--Enter API URL
--Select request method
--Add JSON body if required
--Click Send
--Verify response and status code
+Request:
 
-## Learning Outcomes:
-=======
-The backend API was deployed using Render Cloud Platform.
+```json
+{
+  "username": "admin",
+  "password": "admin123"
+}
+```
 
-Deployment Steps
+Response:
 
-Created a repository on GitHub.
+```json
+{
+  "access_token": "JWT_TOKEN_VALUE"
+}
+```
 
-Uploaded the Flask project files.
+---
 
-Connected the repository to Render.
+## Deployment Details
 
-Selected Python Environment.
+The backend API was deployed using **Render Cloud Platform**.
 
-Installed dependencies from requirements.txt.
+### Deployment Steps
 
-Deployed the Flask application.
+1. Created a repository on **GitHub**.
+2. Uploaded the Flask project files.
+3. Connected the repository to **Render**.
+4. Selected **Python Environment**.
+5. Installed dependencies from `requirements.txt`.
+6. Deployed the Flask application.
 
-GitHub Repository
+---
 
-Repository Name: FSD-II
-GitHub Username: Bedant186
+## GitHub Repository
 
-Live Deployment (Frontend Preview)
+**Repository Name:** FSD-II  
+**GitHub Username:** Bedant186  
+
+---
+
+## Live Deployment (Frontend Preview)
 
 https://23bda70122-expepriment-8.netlify.app/
 
-Testing Instructions
-Step 1: Run the Flask Server
-Step 2: Open Postman and test the APIs
+---
 
-Learning Outcomes
->>>>>>> a74ec2e (Added README for Experiment 9)
+## Testing Instructions
+
+### Step 1: Run the Flask Server
+
+```bash
+python app.py
+```
+
+### Step 2: Open **Postman** and test the APIs.
+
+---
+
+### 1️⃣ Basic Authentication
+
+Endpoint:
+
+```
+GET /basic-protected
+```
+
+Authorization Type: **Basic Auth**
+
+```
+Username: admin
+Password: admin123
+```
+
+---
+
+### 2️⃣ Token Authentication
+
+Endpoint:
+
+```
+POST /token-login
+```
+
+Request Body:
+
+```json
+{
+ "username": "admin",
+ "password": "admin123"
+}
+```
+
+Use returned token in header:
+
+```
+x-auth-token : TOKEN_VALUE
+```
+
+---
+
+### 3️⃣ JWT Authentication
+
+Endpoint:
+
+```
+POST /jwt-login
+```
+
+Request Body:
+
+```json
+{
+ "username": "admin",
+ "password": "admin123"
+}
+```
+
+Use returned token in header:
+
+```
+Authorization : Bearer JWT_TOKEN
+```
+
+---
+
+## Learning Outcomes
 
 After completing this experiment, the following concepts were learned:
 
-Understanding authentication mechanisms in backend systems.
+- Understanding authentication mechanisms in backend systems.
+- Implementing **Basic Authentication** using Flask.
+- Creating **custom token authentication systems**.
+- Implementing **JWT authentication** for secure APIs.
+- Testing APIs using **Postman**.
+- Deploying backend applications on **Render**.
 
-Implementing Basic Authentication using Flask.
-
-Creating custom token authentication systems.
-
-Implementing JWT authentication for secure APIs.
-
-Testing APIs using Postman.
-
-Deploying backend applications on Render.
+---
 
 ## Conclusion
 
-This experiment demonstrated how authentication can be implemented in REST APIs using Flask. Three different authentication methods—Basic Authentication, Custom Token Authentication, and JWT Authentication—were implemented and tested successfully using Postman. The backend application was also deployed on Render, making it accessible online.
+This experiment demonstrated how authentication can be implemented in REST APIs using Flask. Three different authentication methods—**Basic Authentication, Custom Token Authentication, and JWT Authentication**—were implemented and tested successfully using Postman. The backend application was also deployed on Render, making it accessible online.
+
+---
 
 ## Author
 
-Bedant Singhania
-<<<<<<< HEAD
-Experiment 8 – RESTful API Development using Flask
-=======
+**Bedant Singhania**
 
 Experiment 9 – Implement Authentication using Tokens
->>>>>>> a74ec2e (Added README for Experiment 9)
