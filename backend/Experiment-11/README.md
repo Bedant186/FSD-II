@@ -61,7 +61,7 @@ Each service runs independently and communicates via HTTP requests, showcasing l
 - API testing using Postman  
 - Deployment on cloud platform  
 
----
+```
 
 ## 🗂️ Project Structure
 
@@ -78,8 +78,8 @@ Experiment-11/
 │ └── requirements.txt # Dependencies
 │
 └── README.md # Project Documentation
----
 
+```
 ##  Deployment Details
 
 - **Repository Name:** FSD-II  
