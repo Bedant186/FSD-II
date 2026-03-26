@@ -82,7 +82,6 @@ EXPERIMENT-9/
     ├── Scripts/
     └── pyvenv.cfg
 
-```
 
 ### File Explanation
 
