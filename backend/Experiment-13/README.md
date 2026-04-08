@@ -139,8 +139,8 @@ DELETE Request
 ![DELETE Local](Screenshots/Local%20Server/DEL.png)
 ![Server Local](Screenshots/Local%20Server/ServerRunning.png)
 
-Render Deployment Output
-Server Running
+##Render Deployment Output
+#Server Running
 ![Server Render](Screenshots/OnRender/ServerRunning.png)
 GET Request
 ![GET Render](Screenshots/OnRender/GET.png)
