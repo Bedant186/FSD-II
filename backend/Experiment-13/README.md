@@ -77,7 +77,7 @@ app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL", "sqlite:///fallback.db")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
+```
 🌐 Deployment Details
 Backend Deployment: Render
 Database Hosting: Aiven MySQL
@@ -98,7 +98,7 @@ Connection Method: Environment Variable (DATABASE_URL)
 
  
 ---
-```
+
 
 ##  Learning Outcomes
 
@@ -133,8 +133,6 @@ Server Running
 
 GET Request
 ![GET Local](Screenshots/Local%20Server/GET.png)
-POST Request
-![POST Local](Screenshots/Local%20Server/POST.png)
 PUT Request
 ![PUT Local](Screenshots/Local%20Server/PUT.png)
 DELETE Request
