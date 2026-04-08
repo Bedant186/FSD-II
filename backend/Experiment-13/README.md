@@ -94,7 +94,7 @@ Connection Method: Environment Variable (DATABASE_URL)
 - **Live Deployment (Render):**  
 
   - Customer Service:  
-    https://two3bda70122-experiment-13.onrender.com/  
+    https://two3bda70122-expepriment-13.onrender.com/  
 
  
 ---
