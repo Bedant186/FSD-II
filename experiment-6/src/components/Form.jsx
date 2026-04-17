@@ -1,180 +1,119 @@
-import React, { useState } from "react";
-import {
-  TextField,
-  Button,
-  Checkbox,
-  FormControlLabel,
-  Radio,
-  RadioGroup,
-  FormControl,
-  FormLabel,
-  Select,
-  MenuItem,
-  Box,
-  Typography
-} from "@mui/material";
+import { useState } from "react";
+import TextField from "@mui/material/TextField";
+import Checkbox from "@mui/material/Checkbox";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
+import Box from "@mui/material/Box";
 
-const Form = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-    gender: "",
-    course: "",
-    terms: false,
-  });
-
-  const [errors, setErrors] = useState({});
-
-  const handleChange = (e) => {
-    const { name, value, checked, type } = e.target;
-    setFormData({
-      ...formData,
-      [name]: type === "checkbox" ? checked : value,
-    });
-  };
-
-  const validate = () => {
-    let temp = {};
-
-    temp.name = formData.name ? "" : "Name is required";
-    temp.email = /\S+@\S+\.\S+/.test(formData.email)
-      ? ""
-      : "Valid email is required";
-    temp.password =
-      formData.password.length >= 6
-        ? ""
-        : "Password must be at least 6 characters";
-    temp.gender = formData.gender ? "" : "Select gender";
-    temp.course = formData.course ? "" : "Select a course";
-    temp.terms = formData.terms ? "" : "Accept terms & conditions";
-
-    setErrors(temp);
-
-    return Object.values(temp).every((x) => x === "");
-  };
+export default function FormExample() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [gender, setGender] = useState("");
+  const [agree, setAgree] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (validate()) {
-      alert("Form Submitted Successfully ");
-      console.log(formData);
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email === "" || password === "") {
+      setError("All fields are required");
+      return;
     }
+
+    if (!emailPattern.test(email)) {
+      setError("Please enter a valid email address");
+      return;
+    }
+
+    if (password.length < 6) {
+      setError("Min 6 characters");
+      return;
+    }
+
+    if (!agree) {
+      setError("You must accept the terms");
+      return;
+    }
+
+    setError("");
+    alert("Form submitted successfully");
   };
 
   return (
-    <Box
-      sx={{
-        width: 400,
-        margin: "auto",
-        mt: 5,
-        p: 3,
-        boxShadow: 3,
-        borderRadius: 2,
-      }}
-    >
-      <Typography variant="h5" align="center" gutterBottom>
-        Registration Form
-      </Typography>
+    <Container maxWidth="sm">
+      <Box
+        sx={{
+          mt: 5,
+          p: 3,
+          boxShadow: 3,
+          borderRadius: 2
+        }}
+      >
+        <h3>Registration Form</h3>
 
-      <form onSubmit={handleSubmit}>
-        <TextField
-          fullWidth
-          label="Name"
-          name="name"
-          margin="normal"
-          value={formData.name}
-          onChange={handleChange}
-          error={Boolean(errors.name)}
-          helperText={errors.name}
-        />
+        <form onSubmit={handleSubmit}>
+          <TextField
+            label="Name"
+            fullWidth
+            margin="normal"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
 
-        <TextField
-          fullWidth
-          label="Email"
-          name="email"
-          margin="normal"
-          value={formData.email}
-          onChange={handleChange}
-          error={Boolean(errors.email)}
-          helperText={errors.email}
-        />
+          <TextField
+            label="Email"
+            fullWidth
+            margin="normal"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
-        <TextField
-          fullWidth
-          type="password"
-          label="Password"
-          name="password"
-          margin="normal"
-          value={formData.password}
-          onChange={handleChange}
-          error={Boolean(errors.password)}
-          helperText={errors.password}
-        />
+          <TextField
+            label="Password"
+            type="password"
+            fullWidth
+            margin="normal"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
-        <FormControl
-          component="fieldset"
-          margin="normal"
-          error={Boolean(errors.gender)}
-        >
-          <FormLabel component="legend">Gender</FormLabel>
           <RadioGroup
-            row
-            name="gender"
-            value={formData.gender}
-            onChange={handleChange}
+            value={gender}
+            onChange={(e) => setGender(e.target.value)}
+            sx={{ mt: 2 }}
           >
             <FormControlLabel value="male" control={<Radio />} label="Male" />
             <FormControlLabel value="female" control={<Radio />} label="Female" />
           </RadioGroup>
-          <Typography color="error" variant="caption">
-            {errors.gender}
-          </Typography>
-        </FormControl>
 
-        <FormControl fullWidth margin="normal" error={Boolean(errors.course)}>
-          <Select
-            name="course"
-            displayEmpty
-            value={formData.course}
-            onChange={handleChange}
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={agree}
+                onChange={(e) => setAgree(e.target.checked)}
+              />
+            }
+            label="I agree to terms and conditions"
+          />
+
+          {error && <p style={{ color: "red" }}>{error}</p>}
+
+          <Button
+            type="submit"
+            variant="contained"
+            fullWidth
+            sx={{ mt: 2 }}
           >
-            <MenuItem value="">Select Course</MenuItem>
-            <MenuItem value="react">React</MenuItem>
-            <MenuItem value="node">Node.js</MenuItem>
-            <MenuItem value="python">Python</MenuItem>
-          </Select>
-          <Typography color="error" variant="caption">
-            {errors.course}
-          </Typography>
-        </FormControl>
-
-        <FormControlLabel
-          control={
-            <Checkbox
-              name="terms"
-              checked={formData.terms}
-              onChange={handleChange}
-            />
-          }
-          label="I accept terms & conditions"
-        />
-        <Typography color="error" variant="caption" display="block">
-          {errors.terms}
-        </Typography>
-
-        <Button
-          type="submit"
-          variant="contained"
-          fullWidth
-          sx={{ mt: 2 }}
-        >
-          Submit
-        </Button>
-      </form>
-    </Box>
+            login
+          </Button>
+        </form>
+      </Box>
+    </Container>
   );
-};
-
-export default Form;
+}
