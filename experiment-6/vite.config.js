@@ -10,8 +10,8 @@ export default defineConfig({
     setupFiles: "./src/setupTests.js",
     pool: "threads",
     coverage: {
-    provider: "v8",
-    reporter: ["text", "html"]
-  }
+      provider: "v8",
+      reporter: ["text", "html"]
+    }
   }
 });

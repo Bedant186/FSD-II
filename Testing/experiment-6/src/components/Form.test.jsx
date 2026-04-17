@@ -19,34 +19,79 @@ describe("Login Form Component", () => {
     expect(screen.getByRole("button", { name: /login/i })).toBeInTheDocument();
   });
 
+  it("SHOWS ERROR when fields are empty", () => {
+    render(<FormExample />);
+
+    fireEvent.click(screen.getByRole("button", { name: /login/i }));
+
+    expect(screen.getByText("All fields are required")).toBeInTheDocument();
+  });
+
+  it("SHOWS ERROR for invalid email", () => {
+    render(<FormExample />);
+
+    fireEvent.change(screen.getByLabelText(/email/i), {
+      target: { value: "wrongemail" },
+    });
+
+    fireEvent.change(screen.getByLabelText(/password/i), {
+      target: { value: "123456" },
+    });
+
+    fireEvent.click(screen.getByRole("checkbox"));
+    fireEvent.click(screen.getByRole("button", { name: /login/i }));
+
+    expect(
+      screen.getByText("Please enter a valid email address")
+    ).toBeInTheDocument();
+  });
+
   it("SHOWS ERROR for short password", () => {
     render(<FormExample />);
 
-    const email = screen.getByLabelText(/email/i);
-    const password = screen.getByLabelText(/password/i);
-    const checkbox = screen.getByRole("checkbox");
-    const button = screen.getByRole("button", { name: /login/i });
+    fireEvent.change(screen.getByLabelText(/email/i), {
+      target: { value: "test@test.com" },
+    });
 
-    fireEvent.change(email, { target: { value: "test@test.com" } });
-    fireEvent.change(password, { target: { value: "123" } });
-    fireEvent.click(checkbox);
-    fireEvent.click(button);
+    fireEvent.change(screen.getByLabelText(/password/i), {
+      target: { value: "123" },
+    });
+
+    fireEvent.click(screen.getByRole("checkbox"));
+    fireEvent.click(screen.getByRole("button", { name: /login/i }));
 
     expect(screen.getByText("Min 6 characters")).toBeInTheDocument();
+  });
+
+  it("SHOWS ERROR when checkbox is not checked", () => {
+    render(<FormExample />);
+
+    fireEvent.change(screen.getByLabelText(/email/i), {
+      target: { value: "test@test.com" },
+    });
+
+    fireEvent.change(screen.getByLabelText(/password/i), {
+      target: { value: "123456" },
+    });
+
+    fireEvent.click(screen.getByRole("button", { name: /login/i }));
+
+    expect(screen.getByText("You must accept the terms")).toBeInTheDocument();
   });
 
   it("SUBMITS successfully with valid input", () => {
     render(<FormExample />);
 
-    const email = screen.getByLabelText(/email/i);
-    const password = screen.getByLabelText(/password/i);
-    const checkbox = screen.getByRole("checkbox");
-    const button = screen.getByRole("button", { name: /login/i });
+    fireEvent.change(screen.getByLabelText(/email/i), {
+      target: { value: "test@test.com" },
+    });
 
-    fireEvent.change(email, { target: { value: "test@test.com" } });
-    fireEvent.change(password, { target: { value: "123456" } });
-    fireEvent.click(checkbox);
-    fireEvent.click(button);
+    fireEvent.change(screen.getByLabelText(/password/i), {
+      target: { value: "123456" },
+    });
+
+    fireEvent.click(screen.getByRole("checkbox"));
+    fireEvent.click(screen.getByRole("button", { name: /login/i }));
 
     expect(window.alert).toHaveBeenCalledWith("Form submitted successfully");
   });
