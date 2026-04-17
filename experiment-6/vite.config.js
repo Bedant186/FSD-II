@@ -8,6 +8,10 @@ export default defineConfig({
     globals: true,
     environment: "jsdom",
     setupFiles: "./src/setupTests.js",
-    pool: "threads"
+    pool: "threads",
+    coverage: {
+    provider: "v8",
+    reporter: ["text", "html"]
+  }
   }
 });
