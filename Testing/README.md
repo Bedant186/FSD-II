@@ -132,7 +132,7 @@ Code Push → GitHub Actions Triggered
         Results (PASS/FAIL)
 
         # 📸 Screenshots
-
+```
 
 
 ## 🔄 GitHub Actions
