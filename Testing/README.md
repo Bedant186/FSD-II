@@ -1,204 +1,220 @@
-# 📘 Experiment-16
+# 🚀 Experiment-20: Implement CI/CD Pipeline for Application Deployment
 
+## 📌 Experiment Details
+- **Experiment No.**: 20  
+- **Title**: Implement CI/CD pipeline for application deployment  
+- **Course**: Full Stack Development  
+- **Objective**: Integrate Continuous Integration and Continuous Deployment (CI/CD) using Docker, Docker Compose, and GitHub Actions  
+
+---
+
+# 🎯 Aim
+To design and implement a CI/CD pipeline that automates testing and deployment of a full-stack application using Docker containers and GitHub Actions.
+
+---
+
+# 🧠 Theory
+
+CI/CD stands for **Continuous Integration and Continuous Deployment**.  
+It is a DevOps practice that automates the process of building, testing, and deploying applications.
+
+- **CI (Continuous Integration)**: Automatically tests code whenever changes are pushed.
+- **CD (Continuous Deployment)**: Automatically prepares the application for deployment.
+
+In this experiment:
+- Backend is containerized using Docker.
+- MySQL database is integrated using Docker Compose.
+- Frontend and backend tests are automated using GitHub Actions.
+
+---
+
+# 🛠️ Technologies Used
+
+- **Frontend**: React (Vite)
+- **Backend**: Flask (Python)
+- **Database**: MySQL
+- **Testing**:
+  - Backend: Pytest
+  - Frontend: Vitest
+- **DevOps Tools**:
+  - Docker
+  - Docker Compose
+  - GitHub Actions
+
+---
+
+# 🏗️ Project Structure
+
+```text
+FSD-II/
+│
+├── Testing/
+│   ├── Backend/
+│   │   ├── app.py
+│   │   ├── test_app.py
+│   │   ├── requirements.txt
+│   │   ├── Dockerfile
+│   │
+│   ├── Frontend/
+│   │   ├── src/
+│   │   ├── package.json
+│   │   ├── Dockerfile
+│
+├── docker-compose.yml
+│
+└── .github/
+    └── workflows/
+        ├── cd.yml
+
+
+        # ⚙️ Implementation Steps
+
+## 1️⃣ Backend Setup
+- Created Flask APIs for student CRUD operations  
+- Connected backend to MySQL database using SQLAlchemy  
+- Implemented test cases using Pytest  
+
+---
+
+## 2️⃣ Frontend Setup
+- Built React application using Vite  
+- Implemented form validation  
+- Tested using Vitest  
+
+---
+
+## 3️⃣ Dockerization
+
+### 🔹 Backend Dockerfile
+- Created Docker image for backend  
+- Installed dependencies using `requirements.txt`  
+
+### 🔹 Frontend Dockerfile
+- Built React app inside Docker container  
+
+---
+
+## 4️⃣ Docker Compose
+- Created `docker-compose.yml` to run:
+  - MySQL container  
+  - Backend container  
+- Configured environment variables  
+- Added health check for database readiness  
+
+---
+
+## 5️⃣ CI/CD using GitHub Actions
+
+### 🔹 Backend Workflow
+- Builds Docker containers  
+- Runs backend tests using Pytest  
+
+### 🔹 Frontend Workflow
+- Installs dependencies  
+- Runs tests using Vitest  
+
+---
+
+# 🔁 CI/CD Workflow Flowchart
+
+```text
+Code Push → GitHub Actions Triggered
+            ↓
+      Backend Pipeline
+      - Build Docker Image
+      - Start MySQL Container
+      - Run Pytest
+            ↓
+      Frontend Pipeline
+      - Install Dependencies
+      - Run Vitest Tests
+            ↓
+        Results (PASS/FAIL)
+
+        # 📸 Screenshots
+
+
+
+## 🔄 GitHub Actions
+![GitHub Actions](screenshots/github-actions.png)
+
+## 🔄 GitHub Actions Workflow
+![GitHub Workflow](screenshots/workflow.png)
+
+## 🐳 Container
+![Docker Container](screenshots/docker-containers.png)
+
+## 🐳 Container backend
+![Docker Container](screenshots/docker-backend.png)
+
+## 🐳 Container frontend
+![Docker Container](screenshots/docker-frontend.png)
+
+## 🐳 Docker Image Creation
+![Docker Image](screenshots/docker-build.png)
+
+## 🐳 Running Container
+![Running Container](screenshots/docker-running.png)
+
+## ⚙️ Docker Compose Execution
+![Docker Compose](screenshots/docker-compose.png)
 
 
 ---
 
-##  Title  
-**Perform Unit Testing for Frontend and Backend Modules**
+# 📊 Results
+
+- Backend tests executed successfully inside Docker container  
+- Frontend tests executed successfully using Vitest  
+- CI/CD pipeline successfully automated using GitHub Actions  
 
 ---
 
-##  Aim  
-To perform unit testing on backend APIs using **pytest** and on frontend form components using **Vitest**, and automate testing using **GitHub Actions**.
+# 🎯 Learning Outcomes
+
+- Understood CI/CD concepts and their importance  
+- Learned Docker containerization  
+- Implemented multi-container setup using Docker Compose  
+- Automated testing using GitHub Actions  
+- Solved real-world issue of service dependency (DB readiness)  
+- Integrated frontend and backend testing pipelines  
 
 ---
 
-## 📖 Theory  
+# 🧠 Key Concepts Learned
 
-Unit Testing is a software testing technique where individual components or modules are tested independently.
-
-### 🔹 Backend Testing (pytest)
-- Pytest is a Python testing framework.
-- Used to test Flask APIs.
-- Flask test client simulates HTTP requests.
-- Validates:
-  - Status codes
-  - API responses
-  - Error handling
-
-### 🔹 Frontend Testing (Vitest)
-- Vitest is used for testing React (Vite) apps.
-- Works with React Testing Library.
-- Tests:
-  - Form rendering
-  - User input
-  - Validation logic
-  - Submit functionality
-
-### 🔹 Code Coverage
-- Coverage shows how much code is tested.
-- Tools used:
-  - Backend → `pytest-cov`
-  - Frontend → `Vitest coverage`
-
-### 🔹 Continuous Integration (CI)
-- GitHub Actions automates testing.
-- Runs tests on every push.
-- Ensures code quality.
+- Containerization  
+- Service orchestration  
+- Automated testing  
+- DevOps workflow automation  
+- Continuous Integration pipelines  
 
 ---
 
-## ⚙️ Technologies Used  
+# 🧪 Sample Commands Used
 
-- Python (Flask)
-- Pytest
-- Pytest-Cov
-- React (Vite)
-- Vitest
-- React Testing Library
-- GitHub Actions
-- Node.js
-- Material UI
-
----
-
-##  Functional Requirements  
-
-### Backend
-- Create API
-- Read API
-- Update API
-- Delete API
-
-### Frontend
-- Form rendering
-- Input validation
-- Submit handling
-
----
-
-##  Testing Implementation  
-
-### Backend Testing
-- Tested APIs using pytest
-- Verified:
-  - Status codes (200, 201, 404)
-  - JSON response
-  - Error handling
-
-### Frontend Testing
-- Tested form using Vitest
-- Covered:
-  - Empty input
-  - Invalid email
-  - Password validation
-  - Checkbox validation
-  - Successful submission
-
----
-
-##  Coverage  
-
-### Backend Coverage
 ```bash
-pytest --cov=app --cov-report=html
+docker build -t testing-backend ./Testing/Backend
+docker run -d -p 8000:8000 testing-backend
+docker compose up --build
+git push origin main
 
-```
-```
-##  📁 Project Structure
+# 🏁 Conclusion
 
-Testing/
-│
-├── experiment-6/ # Frontend (React + Vitest)
-│ ├── coverage/ # Coverage report (Vitest)
-│ ├── public/
-│ ├── src/
-│ │ ├── assets/
-│ │ ├── components/
-│ │ │ ├── Form.jsx
-│ │ │ └── Form.test.jsx
-│ │ ├── App.css
-│ │ ├── App.jsx
-│ │ ├── index.css
-│ │ ├── main.jsx
-│ │ └── setupTests.js
-│ ├── index.html
-│ ├── package.json
-│ ├── package-lock.json
-│ ├── vite.config.js
-│ └── README.md
-│
-├── Experiment-8/ # Backend (Flask + Pytest)
-│ ├── htmlcov/ # Coverage report (pytest-cov)
-│ ├── routes/
-│ ├── app.py
-│ ├── run.py
-│ ├── test_app.py
-│ ├── requirements.txt
-│ └── README.md
-│
-├── screenshots/ # Screenshots for submission
-│ ├── workflow-success.png
-│ ├── backend-tests.png
-│ ├── frontend-tests.png
-│ └── coverage-report.png
-│
-└── README.md # Main README (Experiment-16)
-
-```
-
-## 🔗 GitHub Repository  
-
-Project Code Available At:  
-https://github.com/Bedant186/FSD-II/tree/main/Testing  
-
-## Screenshots  
-
-###  Workflow Execution
-![GitHub Actions Workflow](./screenshots/workflow.png)
-
-![GitHub Actions](./screenshots/actions.png)
-
-
-### Backend Tests (pytest)
-![Backend Tests](./screenshots/backend-tests.png)
-
-### Frontend Tests (Vitest)
-![Frontend Tests](./screenshots/frontend-tests.png)
-
-### Coverage Reports
-![Backend Coverage Report](./screenshots/Bcover.png)
-
-![Frontend Coverage Report](./screenshots/Fcover.png)
-
-
+In this experiment, we successfully implemented a CI/CD pipeline using Docker and GitHub Actions.  
+The backend and frontend were tested automatically upon code push, ensuring reliability and efficiency.  
+This approach reflects real-world DevOps practices used in modern software development.
 
 ---
 
-## Learning Outcomes  
+# 👨‍💻 Author
 
-- Understood the concept of **Unit Testing** for both backend and frontend  
-- Learned how to test **Flask APIs using pytest**  
-- Learned how to test **React forms using Vitest and Testing Library**  
-- Gained knowledge of **code coverage tools** (`pytest-cov`, `Vitest coverage`)  
-- Learned to automate testing using **GitHub Actions (CI/CD)**  
-- Improved debugging, validation, and testing skills  
-- Understood importance of testing in real-world software development  
+**Name**: Bedant Singhania  
+**Course**: B.E. CSE (Big Data Analytics)  
+**University**: Chandigarh University  
 
 ---
 
-##  Conclusion  
+# 🔗 GitHub Repository
 
-In this experiment, unit testing was successfully implemented for both backend and frontend modules.  
-Backend APIs were tested using **pytest**, while frontend form validation was tested using **Vitest**.  
-Code coverage tools helped identify untested areas and improve test completeness.  
-GitHub Actions enabled automated testing, ensuring continuous integration and reliability of the application.  
-
----
-
-## 👤 Author  
-
-**Bedant Singhania**  
-B.E. CSE (Big Data Analytics)  
-Chandigarh University  
+👉 https://github.com/Bedant186/FSD-II/tree/main/Testing
